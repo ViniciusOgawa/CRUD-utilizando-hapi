@@ -35,7 +35,7 @@ POST /users/authenticate - Autentica um usuário existente.\
 GET /users - Lista todos os usuários.\
 GET /users/{id} - Retorna um usuário específico.\
 PUT /users/{id} - Atualiza um usuário existente.\
-DELETE /users/{id} - Remove um usuário existente.\
+DELETE /users/{id} - Remove um usuário existente.
 
 Cada rota possui seus próprios parâmetros e requisitos, que devem ser documentados adequadamente. Consulte o código-fonte da aplicação para obter mais detalhes.
 
