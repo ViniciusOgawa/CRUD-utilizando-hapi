@@ -37,8 +37,6 @@ GET /users/{id} - Retorna um usuário específico.\
 PUT /users/{id} - Atualiza um usuário existente.\
 DELETE /users/{id} - Remove um usuário existente.
 
-Cada rota possui seus próprios parâmetros e requisitos, que devem ser documentados adequadamente. Consulte o código-fonte da aplicação para obter mais detalhes.
-
 ## Contribuição
 
 Contribuições são bem-vindas! Sinta-se à vontade para enviar pull requests ou relatar problemas.
