@@ -30,12 +30,12 @@ A API estará disponível em http://localhost:3000.
 
 A API possui as seguintes rotas:
 
-POST /users - Cria um novo usuário
-POST /users/authenticate - Autentica um usuário existente
-GET /users - Lista todos os usuários
-GET /users/{id} - Retorna um usuário específico
-PUT /users/{id} - Atualiza um usuário existente
-DELETE /users/{id} - Remove um usuário existente
+POST /users - Cria um novo usuário.\
+POST /users/authenticate - Autentica um usuário existente.\
+GET /users - Lista todos os usuários.\
+GET /users/{id} - Retorna um usuário específico.\
+PUT /users/{id} - Atualiza um usuário existente.\
+DELETE /users/{id} - Remove um usuário existente.\
 
 Cada rota possui seus próprios parâmetros e requisitos, que devem ser documentados adequadamente. Consulte o código-fonte da aplicação para obter mais detalhes.
 
