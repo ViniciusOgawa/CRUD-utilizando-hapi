@@ -45,7 +45,8 @@ module.exports = [
         config: {
             pre: [
                 { method: AuthMiddleware.verifyToken, assign: 'token' },
-                { method: AuthMiddleware.checkUserExists, assign: 'id' }
+                { method: AuthMiddleware.checkUserExists, assign: 'id' },
+                { method: AuthMiddleware.checkEmailExists, assign: 'user' }
             ]
         }
     },

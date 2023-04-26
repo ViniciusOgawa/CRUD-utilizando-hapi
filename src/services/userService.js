@@ -2,9 +2,18 @@ const User = require('../models/User');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const dotenv = require('dotenv');
+const Boom = require('@hapi/boom');
+const userSchema = require('../schemas/userSchema')
 dotenv.config();
 
-const createUser = async ({ name, email, password }) => {
+const createUser = async (data) => {
+    const { error, value } = userSchema.createUserSchema.validate(data);
+    if (error) {
+        throw Boom.badRequest(error.message);
+    }
+
+    const { name, email, password } = value;
+
     const hashedPassword = await bcrypt.hash(password, 10);
     const user = await User.create({ name, email, password: hashedPassword });
     const token = generateToken(user);
@@ -44,7 +53,13 @@ const updateUser = async (id, data) => {
         throw new Error('User not found');
     }
 
-    const { name, email, password } = data;
+    const { error, value } = userSchema.updateUserSchema.validate(data);
+
+    if (error) {
+        throw Boom.badRequest(error.message);
+    }
+
+    const { name, email, password } = value;
     const hashedPassword = password ? await bcrypt.hash(password, 10) : user.password;
 
     await user.update({ name, email, password: hashedPassword });
